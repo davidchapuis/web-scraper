@@ -1,0 +1,19 @@
+Transform: 'AWS::Serverless-2016-10-31'
+Description: >
+  web_scraper
+
+  SAM Template for web_scraper
+Resources:
+  ScraperFunction: 
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      Handler: web_scraper.lambda_handler
+      Runtime: python3.11
+      Architectures:
+      - x86_64
+      Timeout: 900
+      Events:
+        BunningSchedule:
+          Type: Schedule
+          Properties:
+            Schedule: cron(55 18 * * ? *)
