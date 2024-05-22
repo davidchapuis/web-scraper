@@ -13,7 +13,7 @@ Resources:
       - x86_64
       Timeout: 900
       Events:
-        BunningSchedule:
+        Schedule:
           Type: Schedule
           Properties:
             Schedule: cron(55 18 * * ? *)
